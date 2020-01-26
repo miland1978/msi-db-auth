@@ -1,0 +1,5 @@
+﻿Add-Migration -StartupProject API -Project DataAccess -Context SharedDbContext -OutputDir Migrations <Name>
+
+Remove-Migration -StartupProject API -Project DataAccess -Context SharedDbContext
+
+Update-Database -StartupProject API -Project DataAccess -Context SharedDbContext
