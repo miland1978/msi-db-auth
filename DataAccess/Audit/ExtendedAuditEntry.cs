@@ -1,16 +1,20 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Z.EntityFramework.Plus;
 
 namespace DataAccess.Audit
 {
-	public class ExtendedAuditEntry
+	public class ExtendedAuditEntry : AuditEntry
 	{
-		public Guid Id { get; set; }
+		[Required]
+		[StringLength(128)]
+		public string KeyValue { get; set; }
 
 		[Required]
-		[StringLength(256)]
-		public string Key { get; set; }
+		[StringLength(50)]
+		public string ModifiedWith { get; set; }
 
-		public string Changes { get; set; }
+		[Required]
+		[StringLength(50)]
+		public string ModifiedBy { get; set; }
 	}
 }
